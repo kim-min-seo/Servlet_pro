@@ -17,7 +17,7 @@
 		<label>사자 <input type="radio" name= "animal" value = "lion"></label>
 		
 		<h4>좋아하는 과일을 고르세요</h4>
-		<select>
+		<select name="fruit">
 			<option>바나나</option>
 			<option>딸기</option>
 			<option>복숭아</option>
