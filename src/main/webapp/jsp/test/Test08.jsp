@@ -57,8 +57,8 @@
     list.add(map);
 	%>
 	
-	<table class="table tect-center align-middle">
-		<thead class="thead=light">
+	<table class="table text-center align-middle">
+		<thead class="thead-light">
 			<tr>
 				<th>id</th>
 				<th>표지</th>
@@ -71,7 +71,7 @@
 				<td><%= book.get("id") %></td>
 				<td><img src ="<%= book.get("image") %>" width="70"></td>
 				<td>
-					<a href>
+					<a href ="Test08-output.jsp?id=<%= book.get("id") %>">
 						<%= book.get("title") %>
 					</a>
 				</td>

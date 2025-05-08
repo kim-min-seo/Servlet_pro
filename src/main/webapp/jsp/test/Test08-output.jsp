@@ -65,6 +65,20 @@
     		break;
     	}
     }
+   
 	%>
+	<div class="row align-items-start">
+		<div class="col-md-4">
+			<img src="<%= book.get("image") %>" class="img-fluid" style="max-width: 100%;">
+		</div>
+		
+		<div class="col-md-8">
+			<h2><%= book.get("title") %></h2>
+			<h4><%= book.get("author") %></h4>
+			<p><%= book.get("publisher") %></p>
+		</div>
+	</div>
+	
+	
 </body>
 </html>
