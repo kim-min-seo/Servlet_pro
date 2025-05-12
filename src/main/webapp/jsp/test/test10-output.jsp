@@ -10,7 +10,7 @@
 </head>
 <body>
 	<%
-    request.setCharacterEncoding("UTF-8");
+    
     String titleParam = request.getParameter("title");
 
     List<Map<String, Object>> musicList = new ArrayList<>();
@@ -54,7 +54,7 @@
     }
 	%>
 	<div id="wrap" class="container mt-4">
-    <!-- 헤더 -->
+   
     <header class="d-flex align-items-center py-3 mb-3">
         <h1 class="text-success mb-0 mr-3">Melong</h1>
         <form class="form-inline ml-3" action="test10-output.jsp" method="get">
@@ -63,7 +63,7 @@
         </form>
     </header>
 
-    <!-- 네비게이션 -->
+    
     <ul class="nav mb-3">
         <li class="nav-item"><a class="nav-link font-weight-bold text-dark" href="test10.jsp">멜롱차트</a></li>
         <li class="nav-item"><a class="nav-link font-weight-bold text-dark" href="#">최신음악</a></li>
@@ -73,14 +73,14 @@
     </ul>
 
 	
-		<!-- 곡 정보 -->
+		
 	<h5 class="font-weight-bold">곡 정보</h5>
 	<% if (song != null) { %>
 	  <div class="d-flex p-4 mt-3" style="border: 2px solid #28a745; align-items: flex-start;">
-	    <!-- 앨범 커버 -->
+	   
 	    <img src="<%= song.get("thumbnail") %>" style="width: 180px; margin-right: 40px;">
 	
-	    <!-- 오른쪽 정보 영역 -->
+	 
 	    <div class="media-body" style="padding-top: 0;">
 	      <div style="font-size: 48px; line-height: 1.2; margin-top: 0;"><%= song.get("title") %></div>
 	      <div style="color: #28a745; font-size: 16px; margin-bottom: 18px;"><%= song.get("singer") %></div>
@@ -94,7 +94,7 @@
 	    </div>
 	  </div>
 	
-	  <!-- 가사 -->
+	 
 	  <div class="mt-5">
 	    <h5 class="font-weight-bold">가사</h5>
 	    <hr>
@@ -102,7 +102,7 @@
 	  </div>
 	<% } %>
 	
-	<!-- 푸터 -->
+	
 	<footer class="text-left mt-5 border-top pt-3 text-muted">
 	  <small>&copy; 2021. Melong All Rights Reserved.</small>
 	</footer>

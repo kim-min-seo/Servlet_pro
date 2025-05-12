@@ -50,58 +50,58 @@
     musicInfo.put("time", 217); musicInfo.put("composer", "아이유,이종훈,이채규"); musicInfo.put("lyricist", "아이유"); musicList.add(musicInfo);
 	%>
 	<div id="wrap">
-  <header class="d-flex align-items-center py-3">
-    <h1 class="text-success mb-0 mr-3">Melong</h1>
-    <form class="form-inline d-flex align-items-center">
-      <input type="text" name="title" class="form-control mr-1 search-input">
-      <button type="submit" class="btn btn-primary">검색</button>
-    </form>
-  </header>
-
-  <div class="mb-4">
-    <ul class="nav pl-2 ml-1">
-      <li class="nav-item"><a class="nav-link text-dark font-weight-bold small" href="#">멜롱차트</a></li>
-      <li class="nav-item"><a class="nav-link text-dark font-weight-bold small" href="#">최신음악</a></li>
-      <li class="nav-item"><a class="nav-link text-dark font-weight-bold small" href="#">장르음악</a></li>
-      <li class="nav-item"><a class="nav-link text-dark font-weight-bold small" href="#">멜롱DJ</a></li>
-      <li class="nav-item"><a class="nav-link text-dark font-weight-bold small" href="#">뮤직어워드</a></li>
-    </ul>
-  </div>
-
-  <section>
-    <div class="artist-box mb-4">
-      <img src="<%= artistInfo.get("photo") %>" alt="아이유 사진">
-      <div>
-        <h5><%= artistInfo.get("name") %></h5>
-        <p><%= artistInfo.get("agency") %></p>
-        <p><%= artistInfo.get("debute") %> 데뷔</p>
-      </div>
-    </div>
-
-    <h3 class="mb-3 font-weight-bold">곡 목록</h3>
-    <table class="table">
-      <thead>
-        <tr>
-          <th style="width: 20%; padding-left: 40px;">No</th>
-          <th style="width: 40%;">제목</th>
-          <th style="width: 40%;">앨범</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% for (Map<String, Object> m : musicList) { %>
-        <tr>
-          <td style="padding-left: 40px;"><%= m.get("id") %></td>
-          <td><a href="test10-output.jsp?title=<%= m.get("title") %>"><%= m.get("title") %></a></td>
-          <td><%= m.get("album") %></td>
-        </tr>
-        <% } %>
-      </tbody>
-    </table>
-  </section>
-
-  <footer class="text-muted mt-5 pt-3">
-    <small>&copy; 2021. Melong All Rights Reserved.</small>
-  </footer>
-</div>
+	  <header class="d-flex align-items-center py-3">
+	    <h1 class="text-success mb-0 mr-3">Melong</h1>
+	    <form class="form-inline d-flex align-items-center" action="test10-output.jsp" method="get">
+	      <input type="text" name="title" class="form-control mr-1 search-input">
+	      <button type="submit" class="btn btn-primary">검색</button>
+	    </form>
+	  </header>
+	
+	  <div class="mb-4">
+	    <ul class="nav pl-2 ml-1">
+	      <li class="nav-item"><a class="nav-link text-dark font-weight-bold small" href="#">멜롱차트</a></li>
+	      <li class="nav-item"><a class="nav-link text-dark font-weight-bold small" href="#">최신음악</a></li>
+	      <li class="nav-item"><a class="nav-link text-dark font-weight-bold small" href="#">장르음악</a></li>
+	      <li class="nav-item"><a class="nav-link text-dark font-weight-bold small" href="#">멜롱DJ</a></li>
+	      <li class="nav-item"><a class="nav-link text-dark font-weight-bold small" href="#">뮤직어워드</a></li>
+	    </ul>
+	  </div>
+	
+	  <section>
+	    <div class="artist-box mb-4">
+	      <img src="<%= artistInfo.get("photo") %>" alt="아이유 사진">
+	      <div>
+	        <h5><%= artistInfo.get("name") %></h5>
+	        <p><%= artistInfo.get("agency") %></p>
+	        <p><%= artistInfo.get("debute") %> 데뷔</p>
+	      </div>
+	    </div>
+	
+	    <h3 class="mb-3 font-weight-bold">곡 목록</h3>
+	    <table class="table">
+	      <thead>
+	        <tr>
+	          <th style="width: 20%; padding-left: 40px;">No</th>
+	          <th style="width: 40%;">제목</th>
+	          <th style="width: 40%;">앨범</th>
+	        </tr>
+	      </thead>
+	      <tbody>
+	        <% for (Map<String, Object> m : musicList) { %>
+	        <tr>
+	          <td style="padding-left: 40px;"><%= m.get("id") %></td>
+	          <td><a href="test10-output.jsp?title=<%= m.get("title") %>"><%= m.get("title") %></a></td>
+	          <td><%= m.get("album") %></td>
+	        </tr>
+	        <% } %>
+	      </tbody>
+	    </table>
+	  </section>
+	
+	  <footer class="text-muted mt-5 pt-3">
+	    <small>&copy; 2021. Melong All Rights Reserved.</small>
+	  </footer>
+	</div>
 </body>
 </html>
