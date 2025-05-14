@@ -2,6 +2,7 @@ package com.minseokim1222.common;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -33,13 +34,19 @@ public class MysqlService {
 	}
 	
 	// 쿼리 수행기능
-	public ResultSet  select(String query) {
-		Statement statement = connection.createStatement();
+	public ResultSet select(String query) {
+		
+		Statement statement;
 		try {
+			statement = connection.createStatement();
 			ResultSet resultSet = statement.executeQuery(query);
+			
 			return resultSet;
 		} catch (SQLException e) {
 			
+			e.printStackTrace();
+			
+			return null;
 		}
 		
 	}

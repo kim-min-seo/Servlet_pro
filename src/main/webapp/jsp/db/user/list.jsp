@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ page import="com.minseokim1222.common.MysqlService" %>
+    <%@ page import = "java.sql.ResultSet" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,6 +10,13 @@
 </head>
 <body>
 	
+	<%
+		MysqlService mysqlService =	new MysqlService();
+	
+		mysqlService.connect();
+		ResultSet resultSet = mysqlService.select("SELECT * FROM `new_user`");
+		
+	%>
 	<table border="1">
 		<thead>
 			<tr>
@@ -17,16 +26,13 @@
 			</tr>
 		</thead>
 		<tbody>
+		<% while(resultSet.next()){ %>
 			<tr>
-				<td>유재석</td>
-				<td>yu@gmail.com</td>
-				<td>안녕하세요 국민 MC입니다</td>	
+				<td><%= resultSet.getString("name") %></td>
+				<td><%= resultSet.getString("email") %></td>
+				<td><%= resultSet.getString("introduce") %></td>	
 			</tr>
-			<tr>
-				<td>조세호</td>
-				<td>jo@naver.com</td>
-				<td>상당히 감사힙니다.</td>
-			</tr>
+			<% } %>
 		</tbody>
 	</table>
 </body>
