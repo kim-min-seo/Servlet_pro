@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.minseokim1222.common.MysqlService;
-@WebServlet("/db/user/create")
+//@WebServlet("/db/user/create")
 public class UserCreateController extends HttpServlet {
 
 	@Override
